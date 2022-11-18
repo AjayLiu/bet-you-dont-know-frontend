@@ -20,7 +20,7 @@
       "@styles/*": ["public/styles/*"],
       "@hooks/*": ["src/hooks/*"],
       "@imgs/*": ["https://localhost:3000/public/imgs/*"],
-      "@shared/*": ["../shared/*"],
+      "@shared/*": ["shared/*"],
       "@context/*": ["src/context/*"]
     }
   },
