@@ -9,6 +9,7 @@ const Lobby: React.FC = () => {
   const { slug } = router.query;
 
   useEffect(() => {
+    console.log(slug);
     socket.emit("joinLobby", slug);
   }, [slug]);
 
