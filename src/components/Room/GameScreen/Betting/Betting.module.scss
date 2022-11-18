@@ -1,0 +1,51 @@
+@import "@styles/variables";
+@import "@styles/mixins";
+
+.bettingContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  @include mobile {
+    width: 80%;
+  }
+  .betLabel {
+    font-size: larger;
+  }
+  .betRow {
+    display: flex;
+    margin: 10px auto;
+    height: 50px;
+    width: 90%;
+    justify-content: center;
+    .betInput {
+      font-size: larger;
+      width: 100px;
+    }
+    .betsPresetsButtons {
+      margin-left: 5px;
+      display: flex;
+    }
+  }
+  .confirmButton {
+    width: 30%;
+    margin: auto;
+    @include mobile {
+      min-width: 150px;
+    }
+  }
+  .currentBet {
+    font-size: x-large;
+    border-bottom: 1px solid;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    margin: 20px auto;
+    height: 20px;
+    color: $coin;
+
+    @include mobile {
+      font-size: large;
+    }
+  }
+}
