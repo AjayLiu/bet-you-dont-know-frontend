@@ -3,8 +3,9 @@ import io from "socket.io-client";
 import "@styles/globals.scss";
 import SocketContext from "@context/SocketContext";
 import GoogleAnalyticsHook from "@components/GoogleAnalyticsHook";
+import { backendURL } from "@shared/globalVariables";
 const SOCKET_URL =
-  process.env.NODE_ENV === "production" ? "/" : "http://localhost:5000";
+  process.env.NODE_ENV === "production" ? backendURL : "http://localhost:5000";
 
 const socket = io(SOCKET_URL);
 

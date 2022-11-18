@@ -2,12 +2,13 @@ import { Lobby } from "@shared/types";
 import { useState } from "react";
 import swal from "sweetalert";
 import JSONTree from "react-json-tree";
+import { backendURL } from "@shared/globalVariables";
 
 const Admin: React.FC = () => {
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const onPasswordSubmit = async () => {
-    const response = await fetch("/api/admin/login", {
+    const response = await fetch(backendURL + "/api/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password: password }),
@@ -23,7 +24,7 @@ const Admin: React.FC = () => {
 
   const [lobbies, setLobbies] = useState<Array<Lobby>>([]);
   const fetchAllLobbies = async () => {
-    const response = await fetch("/api/admin/lobbies", {
+    const response = await fetch(backendURL + "/api/admin/lobbies", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
@@ -32,7 +33,7 @@ const Admin: React.FC = () => {
   };
 
   const shutdownLobby = async (id: string) => {
-    const response = await fetch("/api/admin/shutdown", {
+    const response = await fetch(backendURL + "/api/admin/shutdown", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ id: id }),
